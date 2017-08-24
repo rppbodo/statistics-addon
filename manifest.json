@@ -1,0 +1,26 @@
+{
+	"name": "Statistics",
+	"description": "This extension extracts statistics from websites.",
+	"manifest_version": 2,
+	"version": "1.0",
+	"icons": {
+		"48": "icons/stats-48.png"
+	},
+	"content_scripts": [{
+		"matches": ["<all_urls>"],
+		"js": [
+			"definitions.js",
+			"Chart.js",
+			"plotly.min.js",
+			"FileSaver.js"
+		]
+	}],
+	"permissions": [
+		"activeTab"
+	],
+	"browser_action": {
+		"default_icon": "icons/stats-32.png",
+		"default_title": "Statistics",
+		"default_popup": "popup/statistics.html"
+	}
+}
